@@ -56,12 +56,38 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-sortable</b></td>
-    <td>Defines sorting. Accept values: <code>true|false|multi</code>. Default: <code>true</code></td>
+    <td>Toggles sorting. Accept values: <code>true|false|multi</code>. Default: <code>true</code></td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
 &lt;div data-smarti="list" data-name="list" data-sortable="multi"&gt;
+...
+&lt;/div&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-selectable</b></td>
+    <td>Toggles selecting. Accept values: <code>true|false|multi</code>. Default: <code>false</code></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;div data-smarti="list" data-name="list" data-selectable="true"&gt;
+...
+&lt;/div&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-select-class</b></td>
+    <td>Defines css class name for selected item</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;div data-smarti="list" data-name="list" data-selectable="true" data-select-class="selected"&gt;
 ...
 &lt;/div&gt;
 </pre>
