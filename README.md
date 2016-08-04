@@ -32,7 +32,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;div data-name="list"&gt;
+&lt;div data-smarti="list" data-name="list"&gt;
 ...
 &lt;/div&gt;
 </pre>
@@ -48,7 +48,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 &lt;script&gt;
   var data = [{...}, {...}, ...];
 &lt;/script&gt;
-&lt;div data-data="data"&gt;
+&lt;div data-smarti="list" data-name="list" data-data="data"&gt;
 ...
 &lt;/div&gt;
 </pre>
