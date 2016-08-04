@@ -150,4 +150,15 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 </pre>
     </td>
   </tr>
+  <tr>
+    <td><b>data-sort</b></td>
+    <td>Defines default sorting. Accept values: <code>asc|desc</code>. Used with <code>data-sort-...</code> or <code>data-group-...</code> attributes</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;th data-sort-field="Date" data-sort="asc"&gt;Date&lt;/th&gt;
+</pre>
+    </td>
+  </tr>
 </table>
