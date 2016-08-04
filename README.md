@@ -16,3 +16,24 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   ...
 </div>
 ```
+<b>Html attributes reference:</b>
+
+<table>
+  <thead>
+    <tr>
+      <th>attribute</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><b>data-...-field</b><br/><b>data-...-expr</b><br/><b>data-...-method</b></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="javascript">
+
+</pre>
+    </td>
+  </tr>
+</table>
