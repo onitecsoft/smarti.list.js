@@ -82,12 +82,12 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-select-class</b></td>
-    <td>Defines css class name for selected item</td>
+    <td>Defines css class name for selected item. Default: <code>selected</code></td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;div data-smarti="list" data-name="list" data-selectable="true" data-select-class="selected"&gt;
+&lt;div data-smarti="list" data-name="list" data-selectable="true" data-select-class="selected-item"&gt;
 ...
 &lt;/div&gt;
 </pre>
