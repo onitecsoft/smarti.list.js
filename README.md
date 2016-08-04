@@ -7,3 +7,12 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 <b>Dependencies:</b> [smarti.data.js](https://github.com/onitecsoft/smarti.data.js), [smarti.to.js](https://github.com/onitecsoft/smarti.to.js)
 
 <b>Structure:</b>
+```html
+<div data-name="..." data-smarti="list" ...>
+  ...
+  <... data-item="true">
+    ...
+  </...>
+  ...
+</div>
+```
