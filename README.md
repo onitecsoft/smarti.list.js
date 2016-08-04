@@ -16,7 +16,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   ...
 </div>
 ```
-<b>Html attributes reference:</b>
+<b>Html attribute reference:</b>
 
 <table>
   <thead>
@@ -38,6 +38,28 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   var getAmount = function(e) { return e.Amount; }
 &lt;/script&gt;
 &lt;td data-method="getAmount"&gt;n2&lt;/td&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-(field|expr|method)</b></td>
+    <td>Displays defined value of dataItem (innerHtml represents format pattern)</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-sort-(field|expr|method)</b></td>
+    <td>Defines sorting behaviour on element mouseclick</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+
 </pre>
     </td>
   </tr>
