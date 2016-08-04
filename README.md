@@ -211,7 +211,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;div data-attr-style-expr="item.Amount&gt;999?'color:red':''"&gt;&lt;/span&gt;
+&lt;div data-attr-style-expr="item.Amount &gt; 999 ? 'color:red' : ''"&gt;&lt;/div&gt;
 </pre>
     </td>
   </tr>
