@@ -8,7 +8,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 
 <b>Structure:</b>
 ```html
-<div data-name="..." data-smarti="list" ...>
+<div data-name="..." data-smarti="list" ...> //container
   ...
   <... data-item="true"> //this element will be repeated for each dataItem
     ...
@@ -21,7 +21,26 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 <table>
   <thead>
     <tr>
-      <th>attribute</th>
+      <th>container attribute</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><b>data-name</b></td>
+    <td>Defines javascript instance name of type <code>smarti.list</code></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;div data-name="list"&gt;
+...
+&lt;/div&gt;
+</pre>
+    </td>
+  </tr>
+  <thead>
+    <tr>
+      <th>inner element attribute</th>
       <th>description</th>
     </tr>
   </thead>
