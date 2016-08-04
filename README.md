@@ -137,4 +137,17 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 </pre>
     </td>
   </tr>
+  <tr>
+    <td><b>data-group-(field|expr|method)</b></td>
+    <td>Defines grouping (element will be repeated for each group)</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;div data-group-expr="smarti.to('yyyy',item.Date)"&gt;
+...
+&lt;/div&gt;
+</pre>
+    </td>
+  </tr>
 </table>
