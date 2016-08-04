@@ -27,7 +27,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </thead>
   <tr>
     <td><b>data-...-field</b><br/><b>data-...-expr</b><br/><b>data-...-method</b></td>
-    <td>Most attributes can have suffixes <code>-field</code>, <code>-expr</code> or <code>-method</code><br/><code>-field</code> - defines dataItem property name to be used<br/><code>-expr</code> - defines inline expression of dataItem<br/><code>-method</code> - defines external method name with dataItem as argument and return primitive value</td>
+    <td>Most attributes can have suffixes <code>-field</code>, <code>-expr</code> or <code>-method</code><br/><code>-field</code> - defines dataItem property name to be used<br/><code>-expr</code> - defines inline expression of dataItem (dataItemm can be accessed by <code>item</code> variable)<br/><code>-method</code> - defines external method name with dataItem as argument and return primitive value</td>
   </tr>
   <tr>
     <td colspan="2">
