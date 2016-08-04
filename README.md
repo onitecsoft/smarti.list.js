@@ -180,7 +180,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     <td colspan="2">
 <pre lang="html">
 &lt;td data-select="true"&gt;&lt;input type="checkbox" /&gt;&lt;/td&gt;
-&tr;tr data-select="true"&gt;
+&lt;tr data-select="true"&gt;
 ...
 &lt;/tr&gt;
 </pre>
