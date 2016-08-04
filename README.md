@@ -16,12 +16,12 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   ...
 </div>
 ```
-<b>Html attribute reference:</b>
+<b>Container html attribute reference:</b>
 
 <table>
   <thead>
     <tr>
-      <th>container attribute</th>
+      <th>attribute</th>
       <th>description</th>
     </tr>
   </thead>
@@ -93,9 +93,14 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 </pre>
     </td>
   </tr>
+</table>
+
+<b>Inner elements html attribute reference:</b>
+
+<table>
   <thead>
     <tr>
-      <th>inner element attribute</th>
+      <th>attribute</th>
       <th>description</th>
     </tr>
   </thead>
