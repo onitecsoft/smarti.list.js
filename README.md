@@ -206,12 +206,12 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-attr-...-(field|expr|method)</b></td>
-    <td></td>
+    <td>Defines html attributes that depend on data.</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
-
+&lt;div data-attr-style-expr="item.Amount&gt;999?'color:red':''"&gt;&lt;/span&gt;
 </pre>
     </td>
   </tr>
