@@ -94,7 +94,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;th data-sort-field="Date"&gt;Year&lt;/th&gt;
+&lt;th data-sort-field="Date"&gt;Date&lt;/th&gt;
 </pre>
     </td>
   </tr>
