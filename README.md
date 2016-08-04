@@ -43,12 +43,12 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-(field|expr|method)</b></td>
-    <td>Displays defined value of dataItem (innerHtml represents format pattern)</td>
+    <td>Displays defined value of dataItem inside element (innerHtml represents format pattern)</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
-
+&lt;td data-field="Amount"&gt;n2&lt;/td&gt;
 </pre>
     </td>
   </tr>
@@ -59,7 +59,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   <tr>
     <td colspan="2">
 <pre lang="html">
-
+&lt;th data-sort-field="Date"&gt;Year&lt;/th&gt;
 </pre>
     </td>
   </tr>
