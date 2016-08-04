@@ -198,9 +198,31 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;div data-show-field="Visible"&gt;
+&lt;div data-show-expr="item.Name!=null"&gt;
 ...
 &lt;/div&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-attr-...-(field|expr|method)</b></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-aggr-...-(field|expr|method)</b></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+
 </pre>
     </td>
   </tr>
