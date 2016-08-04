@@ -54,6 +54,19 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 </pre>
     </td>
   </tr>
+  <tr>
+    <td><b>data-sortable</b></td>
+    <td>Defines sorting. Accept values: <code>true|false|multi</code>. Default: <code>true</code></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;div data-smarti="list" data-name="list"&gt;
+...
+&lt;/div&gt;
+</pre>
+    </td>
+  </tr>
   <thead>
     <tr>
       <th>inner element attribute</th>
