@@ -27,12 +27,17 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </thead>
   <tr>
     <td><b>data-...-field</b><br/><b>data-...-expr</b><br/><b>data-...-method</b></td>
-    <td></td>
+    <td>Most attributes can have suffixes `-field`, `-expr` or `-method`<br/>`-field` - defines dataItem property name to be used<br/>`-expr` - defines inline expression of dataItem<br/>`-method` - defines external method name with dataItem as argument and return primitive value</td>
   </tr>
   <tr>
     <td colspan="2">
-<pre lang="javascript">
-
+<pre lang="html">
+<div data-field="Name"></div>
+<th data-sort-expr="smarti.to('yyyy', item.Date)"></th>
+<script>
+var getAmount = function(e) { return e.Amount; }
+</script>
+<td data-method="getAmount">n2</td>
 </pre>
     </td>
   </tr>
