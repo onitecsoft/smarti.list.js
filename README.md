@@ -38,6 +38,22 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 </pre>
     </td>
   </tr>
+  <tr>
+    <td><b>data-data</b></td>
+    <td>Defines javascript variable name that contains array of data being populated (global scope)</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;script&gt;
+  var data = [{...}, {...}, ...];
+&lt;/script&gt;
+&lt;div data-data="data"&gt;
+...
+&lt;/div&gt;
+</pre>
+    </td>
+  </tr>
   <thead>
     <tr>
       <th>inner element attribute</th>
