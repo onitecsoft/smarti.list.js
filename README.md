@@ -161,4 +161,26 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 </pre>
     </td>
   </tr>
+  <tr>
+    <td><b>data-select-all</b></td>
+    <td>Defines "sellect all items" behaviour on element mouseclick</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;th data-select-all="true"&gt;&lt;input type="checkbox" /&gt;&lt;/th&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-select</b></td>
+    <td>Defines "sellect item" behaviour on element mouseclick</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;td data-select="true"&gt;&lt;input type="checkbox" /&gt;&lt;/td&gt;
+</pre>
+    </td>
+  </tr>
 </table>
