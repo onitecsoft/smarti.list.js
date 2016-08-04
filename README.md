@@ -8,9 +8,9 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 
 <b>Structure:</b>
 ```html
-<div data-name="..." data-smarti="list" ...> //container
+<div data-name="..." data-smarti="list" ...> <!--container-->
   ...
-  <... data-item="true"> //this element will be repeated for each dataItem
+  <... data-item="true"> <!--this element will be repeated for each dataItem-->
     ...
   </...>
   ...
@@ -180,6 +180,9 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     <td colspan="2">
 <pre lang="html">
 &lt;td data-select="true"&gt;&lt;input type="checkbox" /&gt;&lt;/td&gt;
+&tr;tr data-select="true"&gt;
+...
+&lt;/tr&gt;
 </pre>
     </td>
   </tr>
