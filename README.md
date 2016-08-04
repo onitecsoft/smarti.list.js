@@ -191,4 +191,17 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 </pre>
     </td>
   </tr>
+  <tr>
+    <td><b>data-show-(field|expr|method)</b></td>
+    <td>Defines condition if element can be rendered. Supposed return value type: <code>bool</code></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;div data-show-field="Visible"&gt;
+...
+&lt;/div&gt;
+</pre>
+    </td>
+  </tr>
 </table>
