@@ -31,14 +31,14 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td colspan="2">
-<pre lang="html">
+<xmp>
 <div data-field="Name"></div>
 <th data-sort-expr="smarti.to('yyyy', item.Date)">Year</th>
 <script>
 var getAmount = function(e) { return e.Amount; }
 </script>
 <td data-method="getAmount">n2</td>
-</pre>
+</xmp>
     </td>
   </tr>
 </table>
