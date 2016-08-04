@@ -1,4 +1,4 @@
-# smarti.list.js
+# smarti.list.js `Development`
 
 JQuery list/grid tool. Provides behaviours for any kind of items iterating controls
 
