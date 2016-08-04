@@ -35,7 +35,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 &lt;div data-field="Name"&gt;&lt;/div&gt;
 &lt;th data-sort-expr="smarti.to('yyyy', item.Date)"&gt;Year&lt;/th&gt;
 &lt;script&gt;
-var getAmount = function(e) { return e.Amount; }
+  var getAmount = function(e) { return e.Amount; }
 &lt;/script&gt;
 &lt;td data-method="getAmount"&gt;n2&lt;/td&gt;
 </pre>
