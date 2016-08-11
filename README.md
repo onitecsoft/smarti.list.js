@@ -217,7 +217,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-aggr-(sum|avg|min|max|first|last|custom)-(field|expr|method)</b></td>
-    <td></td>
+    <td>Defines aggregate to be calculated for current group or total summary and displays it.<br/><code>first</code>, <code>last</code> and <code>count</code> aggregates already exists in summary/group (can be displayed with <code>data-(field|expr|method)</code> attribute).</td>
   </tr>
   <tr>
     <td colspan="2">
