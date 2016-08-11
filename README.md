@@ -128,6 +128,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     <td colspan="2">
 <pre lang="html">
 &lt;td data-field="Amount"&gt;n2&lt;/td&gt;
+&lt;td data-expr="item.Amount"&gt;Total: {0:n2}&lt;/td&gt;
 </pre>
     </td>
   </tr>
