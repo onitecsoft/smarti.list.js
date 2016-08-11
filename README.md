@@ -217,7 +217,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     </td>
   </tr>
   <tr>
-    <td><b>data-aggr-(sum|avg|min|max|first|last|custom)-(field|expr|method)</b></td>
+    <td><b>data-aggr-(sum|avg|min|max|first|last)-(field|expr|method)</b></td>
     <td>Defines aggregate to be calculated for current group or total summary and displays it<br/><code>first</code>, <code>last</code> and <code>count</code> aggregates already exists in summary/group (can be displayed with <code>data-(field|expr|method)</code> attribute)<br/><b>Aggregates are supposed to be used outside <code>data-item="true"</code> element</b></td>
   </tr>
   <tr>
@@ -228,5 +228,11 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 &lt;td data-field="count"&gt;Total rows: {0}&lt;/td&gt;
 </pre>
     </td>
+  </tr>
+  <tr>
+    <td><b>data-aggr-custom-method</b></td>
+    <td>Defines custom aggregate method with arguments: <code>index</code>, <code>dataItem</code> and <code>group</code><br/>Calculated with every iterated dataItem value should be assigned to custom property of <code>group</code>
+    
+    Used ith <code>data-(field|expr|method)</code> attribute to display calculated value)</td>
   </tr>
 </table>
