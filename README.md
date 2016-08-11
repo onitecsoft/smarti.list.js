@@ -216,7 +216,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     </td>
   </tr>
   <tr>
-    <td><b>data-aggr-...-(field|expr|method)</b></td>
+    <td><b>data-aggr-(sum|avg|min|max|first|last|custom)-(field|expr|method)</b></td>
     <td></td>
   </tr>
   <tr>
