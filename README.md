@@ -205,7 +205,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     </td>
   </tr>
   <tr>
-    <td><b>data-attr-<attribute name>-(field|expr|method)</b></td>
+    <td><b>data-attr-&lt;attribute name&gt;-(field|expr|method)</b></td>
     <td>Defines html attributes that depend on data.</td>
   </tr>
   <tr>
