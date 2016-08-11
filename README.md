@@ -231,8 +231,19 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-aggr-custom-method</b></td>
-    <td>Defines custom aggregate method with arguments: <code>index</code>, <code>dataItem</code> and <code>group</code><br/>Calculated with every iterated dataItem value should be assigned to custom property of <code>group</code>
-    
-    Used ith <code>data-(field|expr|method)</code> attribute to display calculated value)</td>
+    <td>Defines custom aggregate method with arguments: <code>index</code>, <code>dataItem</code> and <code>group</code><br/>Calculated with every iterated dataItem value should be assigned to custom property of <code>group</code><br/>Use <code>data-(field|expr|method)</code> attribute to display calculated value</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;script&gt;
+  var custom_method = function(i, item, group) {
+    group.custom_field = group.custom_field | 0;
+    group.custom_field += item.Amount;
+  }
+&lt;/script&gt;
+&lt;td data-aggr-custom-method="custom_method" data-field="custom_field"&gt;&lt;/td&gt;
+</pre>
+    </td>
   </tr>
 </table>
