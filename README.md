@@ -242,7 +242,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     group.custom_field += item.Amount;
   }
 &lt;/script&gt;
-&lt;td data-aggr-custom-method="custom_method" data-field="custom_field"&gt;&lt;/td&gt;
+&lt;td data-aggr-custom-method="custom_method" data-field="custom_field"&gt;n2&lt;/td&gt;
 </pre>
     </td>
   </tr>
