@@ -222,7 +222,9 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   <tr>
     <td colspan="2">
 <pre lang="html">
-
+<td data-field="first.Name"></td>
+<td data-aggr-sum-field="Amount">n2</td>
+<td data-field="count">Total rows: {0}</td>
 </pre>
     </td>
   </tr>
