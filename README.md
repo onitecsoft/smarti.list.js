@@ -238,11 +238,11 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 <pre lang="html">
 &lt;script&gt;
   var custom_method = function(i, item, group) {
-    group.custom_field = group.custom_field | 0;
+    group.custom_field = group.custom_field || 0;
     group.custom_field += item.Amount;
   }
 &lt;/script&gt;
-&lt;td data-aggr-custom-method="custom_method" data-field="custom_field"&gt;n2&lt;/td&gt;
+&lt;td data-aggr-custom-method="custom_method" data-field="custom_field"&gt;Total: {0:n2}&lt;/td&gt;
 </pre>
     </td>
   </tr>
