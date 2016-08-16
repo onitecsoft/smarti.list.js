@@ -8,13 +8,13 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 
 <b>Structure:</b>
 ```html
-<div data-name="..." data-smarti="list" ...> <!--container-->
+<... data-name="..." data-smarti="list" ...> <!--container-->
   ...
   <... data-item="true"> <!--this element will be repeated for each dataItem-->
     ...
   </...>
   ...
-</div>
+</...>
 ```
 <b>Container html attribute reference:</b>
 
