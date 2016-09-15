@@ -1,4 +1,4 @@
-var smarti = window['smarti'] || {};
+var smarti = this['smarti'] || { scope: this };
 
 $(function () {
 	if (!smarti.initialized) {
@@ -11,7 +11,7 @@ $.fn.smarti = function () {
 	$.each(this.selector == '[data-smarti]' ? this : this.find('[data-smarti]'), function () {
 		var jq = $(this);
 		var opts = jq.data();
-		window[opts.name] = new smarti[opts['smarti']](jq, opts);
+		smarti.scope[opts.name] = new smarti[opts['smarti']](jq, opts);
 	});
 }
 
@@ -24,7 +24,7 @@ smarti.list = function (jq, opts) {
 	var that = this;
 	this.sortable = true;
 	$.extend(that, opts);
-	this.data = this.data ? smarti.data.get(this.data, window) || [] : [];
+	this.data = this.data ? smarti.data.get(this.data, smarti.scope) || [] : [];
 	this.selectClass = this.selectClass || 'selected';
 	this.container = jq;
 	this.template = this.container.children().remove();
@@ -182,7 +182,7 @@ smarti.list = function (jq, opts) {
 	this._getter = function (f, e, m, jq, s) {
 		if (m) {
 			if (jq) jq.removeAttr('data-' + (s ? s + '-' : '') + 'method');
-			return smarti.data.get(m, window);
+			return smarti.data.get(m, smarti.scope);
 		}
 		else if (e) {
 			if (jq) jq.removeAttr('data-' + (s ? s + '-' : '') + 'expr');
