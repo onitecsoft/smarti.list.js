@@ -107,9 +107,7 @@ smarti.list = function (jq, opts) {
 	}
 	this.selectedItems = function () {
 		var items = [];
-		that.container.find('.' + that.selectClass).closest('[data-i]', that.container[0]).each(function () {
-			items.push(that.viewData[$(this).data('i')])
-		});
+		that.container.find('.' + that.selectClass).each(function () { items.push(that.item($(this))) });
 		return items;
 	}
 	this.filter = function (filters) {
