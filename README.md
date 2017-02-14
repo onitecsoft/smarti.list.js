@@ -202,6 +202,20 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     </td>
   </tr>
   <tr>
+    <td><b>data-click</b></td>
+    <td>Defines mouseclick action. Attribute value can be external method that will be called after. If attribute defined within <code>data-item</code> element, then current item argument will be passed</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;a data-click="showDetails"&gt;Show details&lt;/a&gt;
+&lt;script&gt;
+  var showDetails = function(item) { ... }
+&lt;/script&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
     <td><b>data-show-(field|expr|method)</b></td>
     <td>Defines condition if element can be rendered. Supposed return value type: <code>bool</code></td>
   </tr>
