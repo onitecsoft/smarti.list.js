@@ -41,17 +41,28 @@ smarti.list = function (jq, opts) {
 		}
 	}).on('click', '[data-select-all]', function (e) {
 		if (that.selectable) {
-			var c = $(this).children(':checkbox')[0] || this;
+			var jq = $(this);
+			var c = jq.children(':checkbox')[0] || this;
 			if (!$(e.target).is(':checkbox')) c.checked = !c.checked;
 			that.selectAll(c.checked);
+			var g = smarti.data.get(jq.data('selectAll'), smarti.scope);
+			if (g) g();
 		}
 	}).on('click', '[data-select]', function (e) {
 		if (that.selectable) {
-			var i = that.container.find('[data-i=' + $(this).closest('[data-i]').data('i') + ']');
-			that.select(i, that.selectable == 'multi');
+			var jq = $(this);
+			that.select(jq, that.selectable == 'multi');
+			var g = smarti.data.get(jq.data('select'), smarti.scope);
+			if (g) g(that.item(jq));
+		}
+	}).on('click', '[data-click]', function (e) {
+		if ($(e.target).closest('[data-select]', this).length == 0) {
+			var jq = $(this);
+			var g = smarti.data.get(jq.data('click'), smarti.scope);
+			if (g) g(that.item(jq));
 		}
 	}).on('click', '[data-toggler]', function (e) {
-		that.container.find('[data-toggled=' + $(this).data('toggler') + ']').toggle();
+		//that.container.find('[data-toggled=' + $(this).data('toggler') + ']').toggle();
 	});
 
 	this.init = function () {
@@ -82,11 +93,24 @@ smarti.list = function (jq, opts) {
 	}
 	this.select = function (jq, toggle) {
 		if (!toggle) that.selectAll(false);
-		jq.toggleClass(that.selectClass);
-		var c = jq.is('[data-select]') ? jq : jq.find('[data-select]');
-		c.children(':checkbox,:radio').prop('checked', jq.hasClass(that.selectClass));
+		jq.each(function () {
+			var o = $(this);
+			var i = o.closest('[data-i]', that.container[0]);
+			var s = o.is('[data-select]') ? o : o.find('[data-select]');
+			i.toggleClass(that.selectClass);
+			s.children(':checkbox,:radio').prop('checked', i.hasClass(that.selectClass));
+		});
+	}
+	this.item = function (jq) {
+		var i = jq.closest('[data-i]', that.container[0]).data('i');
+		return i != null ? that.viewData[i] : null;
 	}
 	this.selectedItems = function () {
+		var items = [];
+		that.container.find('.' + that.selectClass).closest('[data-i]', that.container[0]).each(function () {
+			items.push(that.viewData[$(this).data('i')])
+		});
+		return items;
 	}
 	this.filter = function (filters) {
 		that.filters = [].concat(filters);
@@ -199,5 +223,6 @@ smarti.list = function (jq, opts) {
 		return o;
 	}
 	this.init();
-	this.load();
+	if (typeof this.data === 'function') { this.data(); this.data = []; }
+	else this.load();
 }
