@@ -171,12 +171,16 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-select-all</b></td>
-    <td>Defines "sellect all items" behaviour on element mouseclick</td>
+    <td>Defines "sellect all items" behaviour on element mouseclick. Attribute value can be external method that will be called after selection</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;th data-select-all="true"&gt;&lt;input type="checkbox" /&gt;&lt;/th&gt;
+&lt;th data-select-all=""&gt;&lt;input type="checkbox" /&gt;&lt;/th&gt;
+&lt;th data-select-all="someAction"&gt;&lt;input type="checkbox" /&gt;&lt;/th&gt;
+&lt;script&gt;
+  var someAction = function() { ... }
+&lt;/script&gt;
 </pre>
     </td>
   </tr>
