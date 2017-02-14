@@ -186,15 +186,18 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-select</b></td>
-    <td>Defines "sellect item" behaviour on element mouseclick</td>
+    <td>Defines "sellect item" behaviour on element mouseclick. Attribute value can be external method (with current item argument) that will be called after selection</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;td data-select="true"&gt;&lt;input type="checkbox" /&gt;&lt;/td&gt;
-&lt;tr data-select="true"&gt;
+&lt;td data-select=""&gt;&lt;input type="checkbox" /&gt;&lt;/td&gt;
+&lt;tr data-select="itemSelect"&gt;
 ...
 &lt;/tr&gt;
+&lt;script&gt;
+  var itemSelect = function(item) { ... }
+&lt;/script&gt;
 </pre>
     </td>
   </tr>
