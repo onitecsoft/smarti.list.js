@@ -224,6 +224,6 @@ smarti.list = function (jq, opts) {
 	if (typeof this.data === 'function') {
 		var df = this.data;
 		this.data = [];
-		$(function () { df() });
+		setTimeout(df);
 	} else this.load();
 }
