@@ -221,6 +221,9 @@ smarti.list = function (jq, opts) {
 		return o;
 	}
 	this.init();
-	if (typeof this.data === 'function') { this.data(); this.data = []; }
-	else this.load();
+	if (typeof this.data === 'function') {
+		var df = this.data;
+		this.data = [];
+		$(function () { df() });
+	} else this.load();
 }
