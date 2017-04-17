@@ -131,7 +131,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-(field|expr|method)</b></td>
-    <td>Displays defined value of dataItem inside element (innerHtml represents format pattern)</td>
+    <td>Displays defined value of dataItem inside element (nested content represents format pattern)</td>
   </tr>
   <tr>
     <td colspan="2">
