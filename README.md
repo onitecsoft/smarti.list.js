@@ -29,7 +29,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </thead>
   <tr>
     <td><b>data-name</b></td>
-    <td>Defines javascript instance name of type <code>smarti.list</code></td>
+    <td>Defines javascript instance name of current <code>smarti.list</code></td>
   </tr>
   <tr>
     <td colspan="2">
@@ -42,13 +42,20 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-data</b></td>
-    <td>Defines javascript variable name that contains array of data being populated (global scope)</td>
+    <td>Defines being populated array of data or javascript function name (global scope)</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
 &lt;script&gt;
   var data = [{...}, {...}, ...];
+  //or
+  var data = function(){
+    $.ajax({
+      ...
+      success:function(jsonData){ list.load(jsonData) }
+    });
+  }
 &lt;/script&gt;
 &lt;div data-smarti="list" data-name="list" data-data="data"&gt;
 ...
