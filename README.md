@@ -42,7 +42,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-data</b></td>
-    <td>Defines being populated array of data or javascript function name (global scope)</td>
+    <td>Defines array of data or javascript function to populate list (global scope)</td>
   </tr>
   <tr>
     <td colspan="2">
