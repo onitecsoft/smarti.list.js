@@ -8,7 +8,7 @@ $(function () {
 })
 
 $.fn.smarti = function (auto) {
-	$.each(auto' ? this : this.find('[data-smarti]'), function () {
+	$.each(auto ? this : this.find('[data-smarti]'), function () {
 		var jq = $(this);
 		var opts = jq.data();
 		smarti.scope[opts.name] = new smarti[opts['smarti']](jq, opts);
