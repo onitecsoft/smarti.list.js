@@ -76,7 +76,8 @@ smarti.list = function (jq, opts) {
 	this.load = function (data) {
 		if (arguments.length > 0) that.data = data || [];
 		that.viewData = smarti.data.filter(that.data, that.filters);
-		smarti.data.sort(that.viewData, that.gsorting.concat(smarti.data.filter(that.sorting, function (e) { return e.dir })));
+		if (that.gsorting.length > 0 || that.sorting.length > 0)
+			smarti.data.sort(that.viewData, that.gsorting.concat(smarti.data.filter(that.sorting, function (e) { return e.dir })));
 		that.container.html(that._list(0, smarti.data.group(that.viewData, that.grouping, that.aggregates, that._item)[0]));
 	}
 	this.sort = function (options) {
