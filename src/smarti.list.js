@@ -27,7 +27,6 @@ smarti.list = function (jq, opts) {
 	this.data = this.data ? smarti.data.get(this.data, smarti.scope) || [] : [];
 	this.selectClass = this.selectClass || 'selected';
 	this.container = jq;
-	this.template = this.container.children().remove();
 	this.container.on('click', '[data-sort-field]', function (e) {
 		if (that.sortable) {
 			var f = $(this).data('sortField');
@@ -71,7 +70,7 @@ smarti.list = function (jq, opts) {
 		that.grouping = [null];
 		that.aggregates = {};
 		that.filters = [];
-		that._list = that._template(that.template);
+		that._list = that._template(that.container);
 	}
 	this.load = function (data) {
 		if (arguments.length > 0) that.data = data || [];
@@ -115,11 +114,10 @@ smarti.list = function (jq, opts) {
 		that.filters = [].concat(filters);
 		that.load();
 	}
-	this._template = function (jq) {
+	this._template = function (jq, self) {
 		var p = [];
 		var s = '\u000B';
-		jq = $('<div></div>').append(jq);
-		jq.find('*').each(function () {
+		(self ? jq : jq.children()).each(function () {
 			var e = $(this);
 			var d = e.data();
 			var c = this.innerHTML;
@@ -130,7 +128,7 @@ smarti.list = function (jq, opts) {
 			if (d.groupField || d.groupExpr || d.groupMethod) {
 				e.replaceWith(s + p.length + s);
 				var g = that._getter(d.groupField, d.groupExpr, d.groupMethod, e, 'group');
-				var t = that._template(e);
+				var t = that._template(e, true);
 				that.grouping.push(g);
 				if (d.sort) that.gsorting.push({ method: g, dir: d.sort });
 				p.push(function (k, v) {
@@ -138,22 +136,22 @@ smarti.list = function (jq, opts) {
 					for (var i = 0, l = v.items.length; i < l; i++) b += t(i, v.items[i]);
 					return b;
 				});
-				return false;
+				return;
 			}
 			if (d.item) {
 				e.replaceWith(s + p.length + s);
 				e.removeAttr('data-item').attr('data-i', 'true');
-				var t = that._template(e);
+				var t = that._template(e, true);
 				that._item = function (i, d, g) { g.body = (g.body || '') + t(i, d) }
 				p.push(function (k, v) { return v.body });
-				return false;
+				return;
 			}
 			if (d.showField || d.showExpr || d.showMethod) {
 				e.replaceWith(s + p.length + s);
 				var g = that._getter(d.showField, d.showExpr, d.showMethod, e, 'show');
-				var t = that._template(e);
+				var t = that._template(e, true);
 				p.push(function (k, v) { return g(v) ? t(k, v) : '' });
-				return false;
+				return;
 			}
 			if (d.i) {
 				e.attr('data-i', s + p.length + s);
@@ -182,10 +180,9 @@ smarti.list = function (jq, opts) {
 				if (smarti.data.starts(i, 'attr')) {
 					i = i.substr(4).replace(/(field|expr|method)$/i, '');
 					var a = i.toLowerCase();
-					var ag = that._getter(d['attr' + i + 'Field'], d['attr' + i + 'Expr'], d['attr' + i + 'Method'], e, 'attr-' + a);
 					var av = e.attr(a);
 					e.attr(a, (av ? av + ';' : '') + s + p.length + s);
-					p.push(function (k, v) { return ag(v) });
+					p.push(that._attrGetter(e, d, i, a));
 				}
 			}
 			if (d.method || d.expr || d.field) {
@@ -193,14 +190,23 @@ smarti.list = function (jq, opts) {
 				this.innerHTML = s + p.length + s;
 				p.push(function (k, v) { return smarti.to(c, g(v)) });
 			}
+			if (e.children().length > 0) {
+				var t = that._template(e);
+				this.innerHTML = s + p.length + s;
+				p.push(function (k, v) { return t(k, v) });
+			}
 		});
-		var t = jq.length > 0 ? jq[0].innerHTML.split(s) : [''];
+		var t = jq.length > 0 ? (self ? jq.prop('outerHTML') : jq.prop('innerHTML')).split(s) : [''];
 		//todo eval
 		return function (k, v) {
 			var s = '';
 			for (var i = 0; i < t.length; i++) s += i % 2 == 0 ? t[i] : p[t[i]](k, v);
 			return s;
 		};
+	}
+	this._attrGetter = function (e, d, i, a) {
+		var g = that._getter(d['attr' + i + 'Field'], d['attr' + i + 'Expr'], d['attr' + i + 'Method'], e, 'attr-' + a);
+		return function (k, v) { return g(v) };
 	}
 	this._getter = function (f, e, m, jq, s) {
 		if (m) {
