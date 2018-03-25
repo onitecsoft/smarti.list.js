@@ -138,7 +138,7 @@ smarti.list = function (jq, opts) {
 					for (var i = 0, l = v.items.length; i < l; i++) b += t(i, v.items[i]);
 					return b;
 				});
-				return;
+				return false;
 			}
 			if (d.item) {
 				e.replaceWith(s + p.length + s);
@@ -146,14 +146,14 @@ smarti.list = function (jq, opts) {
 				var t = that._template(e);
 				that._item = function (i, d, g) { g.body = (g.body || '') + t(i, d) }
 				p.push(function (k, v) { return v.body });
-				return;
+				return false;
 			}
 			if (d.showField || d.showExpr || d.showMethod) {
 				e.replaceWith(s + p.length + s);
 				var g = that._getter(d.showField, d.showExpr, d.showMethod, e, 'show');
 				var t = that._template(e);
 				p.push(function (k, v) { return g(v) ? t(k, v) : '' });
-				return;
+				return false;
 			}
 			if (d.i) {
 				e.attr('data-i', s + p.length + s);
