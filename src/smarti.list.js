@@ -27,6 +27,7 @@ smarti.list = function (jq, opts) {
 	this.data = this.data ? smarti.data.get(this.data, smarti.scope) || [] : [];
 	this.selectClass = this.selectClass || 'selected';
 	this.container = jq;
+	this.template = this.container.clone();
 	this.container.on('click', '[data-sort-field]', function (e) {
 		if (that.sortable) {
 			var f = $(this).data('sortField');
@@ -70,7 +71,7 @@ smarti.list = function (jq, opts) {
 		that.grouping = [null];
 		that.aggregates = {};
 		that.filters = [];
-		that._list = that._template(that.container);
+		that._list = that._template(that.template.clone());
 	}
 	this.load = function (data) {
 		if (arguments.length > 0) that.data = data || [];
@@ -83,6 +84,7 @@ smarti.list = function (jq, opts) {
 		if (options) {
 			if (typeof options == 'string') options = { field: options, method: smarti.data.getter(options) };
 			else if (typeof options == 'function') options = { field: '', method: options };
+			if (!options.dir) options.dir = 'asc';
 			that.sorting = [].concat(options);
 		}
 		that.load();
